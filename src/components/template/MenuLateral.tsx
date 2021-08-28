@@ -3,7 +3,12 @@ import Logo from "./Logo";
 import MenuItem from "./MenuItem";
 export default function MenuLateral() {
   return (
-    <aside className={`flex flex-col`}>
+    <aside
+      className={`flex flex-col 
+    bg-gray-200 text-gray-700
+    dark:bg-gray-900
+    `}
+    >
       <div
         className={`bg-gradient-to-r from-yellow-500  to-red-500 h-20 w-20 flex flex-col items-center justify-center`}
       >
@@ -21,7 +26,13 @@ export default function MenuLateral() {
           texto="Sair"
           icone={IconeSair}
           onClick={() => alert("Saiu")}
-          className={`text-red-600 hover:bg-red-400 hover:text-white`}
+          className={`
+                    text-red-600 
+                    hover:bg-red-400 
+                    hover:text-white
+                    dark:hover:text-white 
+                    dark:text-red-400
+          `}
         />
       </ul>
     </aside>
