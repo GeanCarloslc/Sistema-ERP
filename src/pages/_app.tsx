@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import "./css/login.css";
 import 'tailwindcss/tailwind.css';
 import { AppProvider } from '../data/context/AppContext'
 

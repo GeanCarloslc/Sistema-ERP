@@ -15,7 +15,7 @@ export default function AutenticacaoUsuario(props: AutenticacaoUsuario) {
         value={props.valor}
         onChange={evento => props.valorMudou?.(evento.target.value)}
         required={props.obrigatorio}
-        className={`px-4 py-3 rounded-lg bg-gray-200 mt-1 border focus:border-blue-500 focus:outline-none`}
+        className={`px-4 py-3 rounded-lg bg-gray-200 mt-1 border focus:border-blue-500 focus:outline-none focus:bg-white`}
       />
     </div>
   );

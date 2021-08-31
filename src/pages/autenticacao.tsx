@@ -1,5 +1,7 @@
 import { useState } from "react";
+import logoLion from "../components/assets/logo-lion.png";
 import AutenticacaoUsuario from "../components/auth/AutenticacaoUsuario";
+import Image from "next/image";
 
 export default function Autenticacao() {
   const [modo, setModo] = useState<"login" | "cadastro">("login");
@@ -15,8 +17,18 @@ export default function Autenticacao() {
   }
 
   return (
-    <div className={`flex flex-col h-screen items-center justify-center`}>
-      <div className={`w-1/2`}>
+    <div className={`flex h-screen items-center justify-center`}>
+      <div className={`w-2/3 h-screen bg-gray-600 `}>
+        <div className={`image`}>
+          <Image
+            src={logoLion}
+            alt="Logo"
+            height={400}
+            width={400}
+          />
+        </div>
+      </div>
+      <div className={` m-10 w-1/2`}>
         <h1 className={`text-xl font-bold mb-5`}>
           {modo === "login"
             ? "Entre com sua conta"
