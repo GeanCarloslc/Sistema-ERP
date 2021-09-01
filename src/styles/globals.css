@@ -10,8 +10,33 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+
 }
 
 * {
   box-sizing: border-box;
+}
+
+/*
+  Palheta de cores smart lion
+  background-color: #17395C;
+  background-color: #EFB758;
+  background-color: #C24229;
+  background-color: #E1DCC9;
+
+*/
+.bg-azul-lion{
+  background-color: #17395C;
+}
+
+.bg-amarelo-lion{
+  background-color: #EFB758;
+}
+
+.bg-vermelho-lion{
+  background-color: #C24229;
+}
+
+.bg-cinza-lion{
+  background-color: #E1DCC9;
 }

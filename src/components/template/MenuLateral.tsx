@@ -10,7 +10,7 @@ export default function MenuLateral() {
     `}
     >
       <div
-        className={`bg-gradient-to-r from-yellow-500  to-red-500 h-20 w-20 flex flex-col items-center justify-center`}
+        className={`bg-gradient-to-r bg-amarelo-lion h-20 w-20 flex flex-col items-center justify-center`}
       >
         <Logo></Logo>
       </div>
