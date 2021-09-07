@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import Image from "next/image"
 import avatar from "../assets/avatar.svg";
@@ -13,13 +14,14 @@ export default function AvatarUsuario(props: AvatarUsuario){
     const { usuario } = useAutenticacao();
     return (
       <Link href="/perfil">
-          <Image className={`cursor-pointer`}
-            src={usuario?.imagemUrl ?? avatar}
-            height={33}
-            width={35}
-          >
-              
-          </Image>
+        <img
+          src={usuario?.imagemUrl ?? "/images/avatar.svg"}
+          alt="Avatar do Usuário"
+          className={`
+                    h-10 w-10 rounded-full cursor-pointer
+                    ${props.className}
+                `}
+        />
       </Link>
     );
 }
