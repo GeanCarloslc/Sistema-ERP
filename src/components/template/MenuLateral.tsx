@@ -1,6 +1,7 @@
 import { IconeAjustes, IconeCasa, IconeSair, IconeSino } from "../icons";
 import Logo from "./Logo";
 import MenuItem from "./MenuItem";
+import route from "next/router"
 export default function MenuLateral() {
   return (
     <aside
@@ -25,7 +26,7 @@ export default function MenuLateral() {
         <MenuItem
           texto="Sair"
           icone={IconeSair}
-          onClick={() => alert("Saiu")}
+          onClick={() => route.push("/autenticacao")}
           className={`
                     text-red-600 
                     hover:bg-red-400 

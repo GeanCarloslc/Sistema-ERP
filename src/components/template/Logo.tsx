@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logoLeao from "../assets//logo-apenas.png";
+import logoLeao from "../assets/logo-apenas.png";
 
 export default function Logo() {
   return (

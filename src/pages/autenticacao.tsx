@@ -3,8 +3,12 @@ import LogoLion from "../components/assets/logo-lion.png";
 import AutenticacaoUsuario from "../components/auth/AutenticacaoUsuario";
 import Image from "next/image";
 import { IconeAtencao } from "../components/icons";
+import useAutenticacao from "../data/hook/useAutenticacao";
 
 export default function Autenticacao() {
+
+  const { usuario, loginGoogle} = useAutenticacao()
+
   const [erro, setErro] = useState(null);
   const [modo, setModo] = useState<"login" | "cadastro">("login");
   const [email, setEmail] = useState("");
@@ -75,7 +79,7 @@ export default function Autenticacao() {
           <hr className={`my-6 border-gray-300 w-full`} />
 
           <button
-            onClick={submeter}
+            onClick={loginGoogle}
             className={`w-full bg-vermelho-lion  hover:bg-red-400 rounded-lg px-4 py-2 text-md font-bold`}
           >
             Entrar com Google
