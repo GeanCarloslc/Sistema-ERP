@@ -1,7 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
-import LogoLion from "../components/assets/logo-lion.png";
 import AutenticacaoUsuario from "../components/auth/AutenticacaoUsuario";
-import Image from "next/image";
 import { IconeAtencao } from "../components/icons";
 import useAutenticacao from "../data/hook/useAutenticacao";
 
@@ -32,8 +31,14 @@ export default function Autenticacao() {
   return (
     <div className={`flex h-screen items-center justify-center`}>
       <div className={`hidden md:block md:w-2/3 h-screen bg-amarelo-lion`}>
-        <div className={`image`}>
-          <Image src={LogoLion} alt="Logo" height={400} width={400} />
+        <div className={`text-center items-center`}>
+
+          <img src="/images/logo-lion.png" alt="" className={`image p-0`} />
+
+          <div className={`text-center items-center typing`}>
+            <h2>Seja smart, seja lion.</h2>
+          </div>
+
         </div>
       </div>
       <div className={`w-full h-full md:w-1/2 bg-cinza-lion`}>

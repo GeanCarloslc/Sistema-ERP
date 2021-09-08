@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap');
 .image {
   margin: auto;
   width: 50%;
@@ -5,30 +6,53 @@
   margin-top: 20%;
 }
 
+.typing h2{
+  color: #c24229;
+  font-family: 'Teko', sans-serif;
+  font-size: 2.8rem;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .02em;
+  animation: 
+  typing 3.5s steps(30, end) infinite,
+  blink-animation .5s step-end infinite;
+}
 
+@keyframes typing {
+  from {width: 0}
+  to { width: 100%}
+}
+
+@keyframes blink-animation {
+  from, to { border-color: transparent}
+  50% { border-color: transparent}
+}
 
 @media (min-width: 768px) {
   .image {
     margin: auto;
-    width: 50%;
+    width: 70%;
     padding: 10px;
-    margin-top: 40%;
+    margin-top: 30%;
   }
+  
 }
 
 @media (min-width: 950px) {
   .image {
     margin: auto;
-    width: 50%;
+    width: 70%;
     padding: 10px;
-    margin-top: 40%;
+    margin-top: 30%;
   }
+
 }
 
 @media (min-width: 992px) {
   .image {
     margin: auto;
-    width: 50%;
+    width: 70%;
     padding: 10px;
     margin-top: 20%;
   }
@@ -37,8 +61,8 @@
 @media (min-width: 1200px) {
   .image {
     margin: auto;
-    width: 50%;
+    width: 55%;
     padding: 10px;
-    margin-top: 20%;
+    margin-top: 18%;
   }
 }

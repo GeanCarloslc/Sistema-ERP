@@ -1,9 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import Image from "next/image"
-import avatar from "../assets/avatar.svg";
 import useAutenticacao from "../../data/hook/useAutenticacao";
-
 interface AvatarUsuario {
 
   className?: string;

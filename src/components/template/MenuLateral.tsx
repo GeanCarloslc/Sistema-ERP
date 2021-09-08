@@ -2,7 +2,11 @@ import { IconeAjustes, IconeCasa, IconeSair, IconeSino } from "../icons";
 import Logo from "./Logo";
 import MenuItem from "./MenuItem";
 import route from "next/router"
+import useAutenticacao from "../../data/hook/useAutenticacao";
 export default function MenuLateral() {
+
+  const { logout } = useAutenticacao();
+
   return (
     <aside
       className={`flex flex-col 
@@ -26,7 +30,7 @@ export default function MenuLateral() {
         <MenuItem
           texto="Sair"
           icone={IconeSair}
-          onClick={() => route.push("/autenticacao")}
+          onClick={logout}
           className={`
                     text-red-600 
                     hover:bg-red-400 

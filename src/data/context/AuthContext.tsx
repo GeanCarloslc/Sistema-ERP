@@ -6,7 +6,9 @@ import Cookies from "js-cookie";
 
 interface AuthContextProps {
   usuario?: Usuario;
+  carregando?: boolean;
   loginGoogle?: () => Promise<void>;
+  logout?: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextProps>({});
@@ -55,24 +57,44 @@ export function AuthProvider(props) {
   }
 
   async function loginGoogle() {
-    const resposta = await firebase
-      .auth()
-      .signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    try {
+      setCarregando(true);
+      const resposta = await firebase
+        .auth()
+        .signInWithPopup(new firebase.auth.GoogleAuthProvider());
       configurarSessao(resposta.user);
       route.push("/");
-    
+    } finally {
+      setCarregando(false);
+    }
+  }
+
+  async function logout() {
+    try {
+      setCarregando(true);
+      await firebase.auth().signOut();
+      await configurarSessao(null);
+    } finally {
+      setCarregando(false);
+    }
   }
 
   useEffect(() => {
-    const cancelar = firebase.auth().onIdTokenChanged(configurarSessao);
-    return () => cancelar();
-  }, [])
+    if (Cookies.get("smart-lion-auth")) {
+      const cancelar = firebase.auth().onIdTokenChanged(configurarSessao);
+      return () => cancelar();
+    } else {
+      setCarregando(false);
+    }
+  }, []);
 
   return (
     <AuthContext.Provider
       value={{
         usuario,
+        carregando,
         loginGoogle,
+        logout,
       }}
     >
       {props.children}
